@@ -26,7 +26,6 @@ _colcon_prefix_chain_powershell_source_script "/opt/ros/humble\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/mario/ros_ws/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/mario/practica_turtle/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/mario/p_turtle/install\local_setup.ps1"
-_colcon_prefix_chain_powershell_source_script "/home/mario/prueba_ros/install\local_setup.ps1"
 
 # source this prefix
 $env:COLCON_CURRENT_PREFIX=(Split-Path $PSCommandPath -Parent)
