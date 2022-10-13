@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'prueba = paquete_turtle.prueba:main',
+            'movimiento = paquete_turtle.movimiento:main',
+            'dibujar = paquete_turtle.dibujar:main'
         ],
     },
 )
