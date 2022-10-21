@@ -1,0 +1,28 @@
+[0.502s] Invoking command in '/home/mario/GrupoRobotica/Practica1/src/paquete_turtle': PYTHONPATH=/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/paquete_turtle build --build-base /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build install --prefix /home/mario/GrupoRobotica/Practica1/install/paquete_turtle --record /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/install.log --single-version-externally-managed
+[0.714s] running egg_info
+[0.715s] writing ../../build/paquete_turtle/paquete_turtle.egg-info/PKG-INFO
+[0.715s] writing dependency_links to ../../build/paquete_turtle/paquete_turtle.egg-info/dependency_links.txt
+[0.719s] writing entry points to ../../build/paquete_turtle/paquete_turtle.egg-info/entry_points.txt
+[0.719s] writing requirements to ../../build/paquete_turtle/paquete_turtle.egg-info/requires.txt
+[0.719s] writing top-level names to ../../build/paquete_turtle/paquete_turtle.egg-info/top_level.txt
+[0.722s] reading manifest file '../../build/paquete_turtle/paquete_turtle.egg-info/SOURCES.txt'
+[0.722s] writing manifest file '../../build/paquete_turtle/paquete_turtle.egg-info/SOURCES.txt'
+[0.722s] running build
+[0.723s] running build_py
+[0.723s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.723s]   warnings.warn(
+[0.724s] copying paquete_turtle/fondo.py -> /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle
+[0.724s] running install
+[0.725s] running install_lib
+[0.725s] copying /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle/fondo.py -> /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle
+[0.725s] byte-compiling /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/fondo.py to fondo.cpython-310.pyc
+[0.727s] running install_data
+[0.727s] running install_egg_info
+[0.729s] removing '/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle-0.0.0-py3.10.egg-info' (and everything under it)
+[0.729s] Copying ../../build/paquete_turtle/paquete_turtle.egg-info to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle-0.0.0-py3.10.egg-info
+[0.731s] running install_scripts
+[0.756s] Installing dibujar script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+[0.757s] Installing fondo script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+[0.758s] Installing movimiento script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+[0.759s] writing list of installed files to '/home/mario/GrupoRobotica/Practica1/build/paquete_turtle/install.log'
+[0.787s] Invoked command in '/home/mario/GrupoRobotica/Practica1/src/paquete_turtle' returned '0': PYTHONPATH=/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/paquete_turtle build --build-base /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build install --prefix /home/mario/GrupoRobotica/Practica1/install/paquete_turtle --record /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/install.log --single-version-externally-managed

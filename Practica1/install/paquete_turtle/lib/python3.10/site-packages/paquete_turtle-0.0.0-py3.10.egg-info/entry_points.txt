@@ -1,3 +1,5 @@
 [console_scripts]
-prueba = paquete_turtle.prueba:main
+dibujar = paquete_turtle.dibujar:main
+fondo = paquete_turtle.fondo:main
+movimiento = paquete_turtle.movimiento:main
 
