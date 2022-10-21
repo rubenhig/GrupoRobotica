@@ -1,0 +1,55 @@
+-----------------------Topics:
+
+turtle1/cmd_vel   	Tipo: geometry_msgs/msg/Twist
+
+"x: 0.0
+y: 0.0
+theta: 0.0
+linear_velocity: 0.0
+angular_velocity: 0.0
+"
+
+turtle1/pose		Tipo: turtlesim/msg/Pose 
+
+"x: 0.0
+y: 0.0
+theta: 0.0
+linear_velocity: 0.0
+angular_velocity: 0.0
+"
+
+turtle1/color_sensor 	Tipo: turtlesim/msg/Color
+
+r: 179
+g: 184
+b: 255
+
+
+------------------------Actions: 
+
+turtle1/rotate_absolute 	Type: turtlesim/action/RotateAbsolute
+
+------------------------Interfaces:
+
+
+
+------------------------Services:
+
+clear 		Type: std_srvs/srv/Empty
+
+reset		Type: std_srvs/srv/Empty
+
+turtle1/set_pen 	Type: turtlesim/srv/SetPen
+
+"r: 0
+g: 0
+b: 0
+width: 0
+'off': 0
+"
+
+
+
+
+
+
