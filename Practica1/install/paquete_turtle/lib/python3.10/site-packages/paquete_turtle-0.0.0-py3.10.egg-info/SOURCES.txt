@@ -9,6 +9,9 @@ setup.py
 ../../build/paquete_turtle/paquete_turtle.egg-info/top_level.txt
 ../../build/paquete_turtle/paquete_turtle.egg-info/zip-safe
 paquete_turtle/__init__.py
+paquete_turtle/dibujar.py
+paquete_turtle/fondo.py
+paquete_turtle/movimiento.py
 paquete_turtle/prueba.py
 resource/paquete_turtle
 test/test_copyright.py
