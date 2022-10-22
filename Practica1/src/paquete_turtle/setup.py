@@ -23,6 +23,7 @@ setup(
             'movimiento = paquete_turtle.movimiento:main',
             'dibujar = paquete_turtle.dibujar:main',
             'fondo = paquete_turtle.fondo:main'
+            
         ],
     },
 )
