@@ -24,6 +24,8 @@ def main(args=None):
     try:
         rclpy.init(args=args)
         nodo_movimiento = EmisorMovimiento() 
+
+        velocidad = 3.0
         
 
         posicion = Twist()
@@ -42,7 +44,7 @@ def main(args=None):
             if(type(key) == KeyCode and key.char == ('w')):
                 nodo_movimiento.get_logger().info("dentro del if")
                 
-                vector.x = 2.0
+                vector.x = velocidad
                 vector.y = 0.0
                 vector.z = 0.0
                 posicion.linear = vector
@@ -50,7 +52,7 @@ def main(args=None):
 
             if(type(key) == KeyCode and key.char == ('s')):
                 nodo_movimiento.get_logger().info("dentro del if")
-                vector.x = -2.0
+                vector.x = -velocidad
                 vector.y = 0.0
                 vector.z = 0.0
                 posicion.linear = vector
@@ -61,7 +63,7 @@ def main(args=None):
                 nodo_movimiento.get_logger().info("dentro del if")
                 vector.x = 0.0
                 vector.y = 0.0
-                vector.z = 2.0
+                vector.z = velocidad
                 posicion.angular = vector
                 nodo_movimiento.publisher_Pose.publish(posicion)
 
@@ -70,7 +72,7 @@ def main(args=None):
                 nodo_movimiento.get_logger().info("dentro del if")
                 vector.x = 0.0
                 vector.y = 0.0
-                vector.z = -2.0
+                vector.z = -velocidad
                 posicion.angular = vector
                 nodo_movimiento.publisher_Pose.publish(posicion)
 
