@@ -11,6 +11,7 @@
   <depend>pynput</depend>
   <depend>random</depend>
   <depend>rcl_interfaces</depend>
+  <depend>threading</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
