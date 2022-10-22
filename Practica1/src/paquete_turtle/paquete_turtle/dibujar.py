@@ -8,6 +8,9 @@ from geometry_msgs.msg import Twist, Vector3
 from pynput import keyboard
 from pynput.keyboard import Key, Listener, KeyCode
 from turtlesim.srv import SetPen
+from time import sleep
+from threading import Thread
+import random
 
 
 
@@ -18,6 +21,8 @@ class ClienteDibujar(Node):
     g = uint8
     b = uint8
     width = uint8
+
+    color_dinamico = False
 
     def __init__(self):
         super().__init__('Dibujar')
@@ -35,6 +40,10 @@ class ClienteDibujar(Node):
                 return
             else:
                 self.get_logger().info('Server not available, waiting again...')
+
+        daemon = Thread(target=self.cambiar_color_dinamico, daemon=True, name='Color_lapiz')
+        daemon.start()
+
         self.request = SetPen.Request()
         
     
@@ -67,6 +76,31 @@ class ClienteDibujar(Node):
         rclpy.spin_until_future_complete(self, self.futuro)
         return self.futuro.result()
 
+    def cambiar_color_rand(self):
+       
+        self.request.r = random.randint(0, 255)
+        self.request.g = random.randint(0, 255)
+        self.request.b = random.randint(0, 255)
+        self.request.width = self.width
+
+        self.futuro = self.cliente.call_async(self.request)
+        rclpy.spin_until_future_complete(self, self.futuro)
+        return self.futuro.result()
+
+
+    def set_color_dinamico( self):
+        self.color_dinamico = not self.color_dinamico
+        return 0
+
+    def cambiar_color_dinamico(self):
+        while True:
+            if(self.color_dinamico):
+                self.get_logger().info('dentro del while')
+                self.get_logger().info(f'valor de fondo_dinamico: {self.color_dinamico}')
+                self.cambiar_color_rand()
+            sleep(0.1)
+        
+
 
 
 def main(args=None):
@@ -75,16 +109,18 @@ def main(args=None):
         nodo_dibujar = ClienteDibujar()
  
         def on_press(key):
-            
-
-            if(type(key) == Key and key == keyboard.Key.space):
-                nodo_dibujar.get_logger().info("dentro if space")
-                nodo_dibujar.peticion_set()
+            pass
 
 
 
         def on_release(key):
-           pass
+            if(type(key) == KeyCode and key.char == ('c')):
+                nodo_dibujar.get_logger().info("dentro if tecla: C")
+                nodo_dibujar.set_color_dinamico()
+
+            if(type(key) == Key and key == keyboard.Key.space):
+                nodo_dibujar.get_logger().info("dentro if space")
+                nodo_dibujar.peticion_set()
 
 
 
