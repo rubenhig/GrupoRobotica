@@ -15,9 +15,11 @@ Controles
     s --> mover hacia atrás
     a --> girar en sentido antihorario 
     d --> girar en sentido horario
+    r --> reset
   
   Controles dibujar
   
+    c --> clear
     space --> activar / desactivar el pintado
     v --> activar / desactivar el cambio aleatorio del color de pintar cada 0,1 segundos
     
