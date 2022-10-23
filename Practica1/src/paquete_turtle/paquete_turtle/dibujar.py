@@ -17,19 +17,19 @@ class ClienteClear(Node):
 
     def __init__(self):
         super().__init__('ClienteClear')
-        self.cliente = self.create_client(Empty, 'clear')
+        self.cliente_clear = self.create_client(Empty, 'clear')
         # Esperamos a que el servicio esté disponible
-        while not self.cliente.wait_for_service(timeout_sec=1.0):
+        while not self.cliente_clear.wait_for_service(timeout_sec=1.0):
             if not rclpy.ok():
                 self.get_logger().error('Interruped while waiting for the server.')
                 return
             else:
                 self.get_logger().info('Server not available, waiting again...')
-        self.request = Empty.Request()
+        self.request_clear = Empty.Request()
     
     def peticion_c(self):
 
-        self.futuro = self.cliente.call_async(self.request)
+        self.futuro = self.cliente_clear.call_async(self.request_clear)
         rclpy.spin_until_future_complete(self, self.futuro)
         return self.futuro.result()
 
@@ -97,10 +97,13 @@ class ClienteDibujar(Node):
         return self.futuro.result()
 
     def cambiar_color_rand(self):
-       
-        self.request.r = random.randint(0, 255)
-        self.request.g = random.randint(0, 255)
-        self.request.b = random.randint(0, 255)
+        
+        self.r = random.randint(0, 255)
+        self.g = random.randint(0, 255)
+        self.b = random.randint(0, 255)
+        self.request.r = self.r
+        self.request.g = self.g
+        self.request.b = self.b
         self.request.width = self.width
 
         self.futuro = self.cliente.call_async(self.request)
@@ -125,10 +128,11 @@ class ClienteDibujar(Node):
         self.request.r = self.r
         self.request.g = self.g
         self.request.b = self.b
-        if self.width == 5:
+        if self.width == 10:
             self.request.width = self.width
         else:
-            self.request.width = self.width + 1
+            self.width = self.width +1
+            self.request.width = self.width
         
 
         self.futuro = self.cliente.call_async(self.request)
@@ -145,7 +149,8 @@ class ClienteDibujar(Node):
         if self.width == 0:
             self.request.width = self.width
         else:
-            self.request.width = self.width - 1
+            self.width = self.width -1
+            self.request.width = self.width
 
         self.futuro = self.cliente.call_async(self.request)
         rclpy.spin_until_future_complete(self, self.futuro)
