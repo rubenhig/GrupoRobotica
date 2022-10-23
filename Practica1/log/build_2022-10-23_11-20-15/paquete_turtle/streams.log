@@ -1,0 +1,28 @@
+[1.974s] Invoking command in '/home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/src/paquete_turtle': PYTHONPATH=/home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/paquete_turtle build --build-base /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/build install --prefix /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle --record /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/install.log --single-version-externally-managed
+[2.264s] running egg_info
+[2.265s] writing ../../build/paquete_turtle/paquete_turtle.egg-info/PKG-INFO
+[2.267s] writing dependency_links to ../../build/paquete_turtle/paquete_turtle.egg-info/dependency_links.txt
+[2.268s] writing entry points to ../../build/paquete_turtle/paquete_turtle.egg-info/entry_points.txt
+[2.270s] writing requirements to ../../build/paquete_turtle/paquete_turtle.egg-info/requires.txt
+[2.271s] writing top-level names to ../../build/paquete_turtle/paquete_turtle.egg-info/top_level.txt
+[2.273s] reading manifest file '../../build/paquete_turtle/paquete_turtle.egg-info/SOURCES.txt'
+[2.274s] writing manifest file '../../build/paquete_turtle/paquete_turtle.egg-info/SOURCES.txt'
+[2.275s] running build
+[2.275s] running build_py
+[2.276s] copying paquete_turtle/movimiento.py -> /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle
+[2.276s] running install
+[2.276s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.277s]   warnings.warn(
+[2.277s] running install_lib
+[2.278s] copying /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle/movimiento.py -> /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle
+[2.279s] byte-compiling /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/movimiento.py to movimiento.cpython-310.pyc
+[2.281s] running install_data
+[2.282s] running install_egg_info
+[2.284s] removing '/home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle-0.0.0-py3.10.egg-info' (and everything under it)
+[2.299s] Copying ../../build/paquete_turtle/paquete_turtle.egg-info to /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle-0.0.0-py3.10.egg-info
+[2.301s] running install_scripts
+[2.339s] Installing dibujar script to /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+[2.340s] Installing fondo script to /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+[2.342s] Installing movimiento script to /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+[2.343s] writing list of installed files to '/home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/install.log'
+[2.369s] Invoked command in '/home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/src/paquete_turtle' returned '0': PYTHONPATH=/home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/paquete_turtle build --build-base /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/build install --prefix /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/install/paquete_turtle --record /home/vulf/Desktop/pruebas/GrupoRobotica/Practica1/build/paquete_turtle/install.log --single-version-externally-managed

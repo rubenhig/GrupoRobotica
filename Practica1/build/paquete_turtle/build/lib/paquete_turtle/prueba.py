@@ -69,7 +69,6 @@ class ClienteDibujar(Node):
         
         
 
-
         # Llamada asíncrona
         self.futuro = self.cliente.call_async(self.request)
         rclpy.spin_until_future_complete(self, self.futuro)
