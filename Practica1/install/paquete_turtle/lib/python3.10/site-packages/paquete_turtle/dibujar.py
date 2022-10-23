@@ -114,8 +114,8 @@ def main(args=None):
 
 
         def on_release(key):
-            if(type(key) == KeyCode and key.char == ('c')):
-                nodo_dibujar.get_logger().info("dentro if tecla: C")
+            if(type(key) == KeyCode and key.char == ('v')):
+                nodo_dibujar.get_logger().info("dentro if tecla: v")
                 nodo_dibujar.set_color_dinamico()
 
             if(type(key) == Key and key == keyboard.Key.space):
