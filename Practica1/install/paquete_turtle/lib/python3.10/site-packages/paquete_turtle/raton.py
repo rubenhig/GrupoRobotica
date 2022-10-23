@@ -56,7 +56,7 @@ class NodoRaton(Node):
             if(self.pintar_raton and (self.x != 0.0) and (self.y != 0.0)):
                 self.get_logger().info(f'Llamada a mover_absoluto: {self.x}, {self.y}')
                 self.mover_absoluto(self.x, self.y, 0.0)
-            sleep(0.1)
+            sleep(0.05)
         
 
     def set_posicion(self, x, y):
