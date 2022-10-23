@@ -21,7 +21,7 @@ Controles
     space --> activar / desactivar el pintado
     v --> activar / desactivar el cambio aleatorio del color de pintar cada 0,1 segundos
     
-  Controles dibujar con el raton
+  Controles dibujar con el raton (es necesario installar pyautogui: pip install pyautogui)
   
     click derecho --> activar / desactivar el pintar desplazando el raton por la pantalla
   
