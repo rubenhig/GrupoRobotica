@@ -56,10 +56,10 @@ class EmisorMovimiento(Node):
         for i in range(3 ,11):
             self.hacer_poligono(i/5.0, i)
     
-    def mover_absoluto(self):
-        self.request_absoluto.x = 0.0
-        self.request_absoluto.y = 0.0
-        self.request_absoluto.theta = 0.0
+    def mover_absoluto(self, x, y):
+        self.request_absoluto.x = x
+        self.request_absoluto.y = y
+        self.request_absoluto.theta = math.pi/2
 
 
         self.futuro = self.cliente_absoluto.call_async(self.request_absoluto)
@@ -184,7 +184,10 @@ def main(args=None):
 
             if(type(key) == KeyCode and key.char == ('k')):
                 nodo_movimiento.get_logger().info("dentro if k")
-                nodo_movimiento.mover_absoluto()
+                nodo_movimiento.mover_absoluto(0.0, 0.0)
+                nodo_movimiento.mover_absoluto(11.0, 0.0)
+                nodo_movimiento.mover_absoluto(0.0, 11.0)
+                nodo_movimiento.mover_absoluto(11.0, 11.0)
 
             #parar movimientos
 

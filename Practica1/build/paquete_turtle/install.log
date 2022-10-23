@@ -1,9 +1,11 @@
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/movimiento.py
+/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/raton.py
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/__init__.py
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/dibujar.py
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/prueba.py
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/fondo.py
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/__pycache__/movimiento.cpython-310.pyc
+/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/__pycache__/raton.cpython-310.pyc
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/__pycache__/__init__.cpython-310.pyc
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/__pycache__/dibujar.cpython-310.pyc
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/__pycache__/prueba.cpython-310.pyc
@@ -20,3 +22,4 @@
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle/dibujar
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle/fondo
 /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle/movimiento
+/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle/raton
