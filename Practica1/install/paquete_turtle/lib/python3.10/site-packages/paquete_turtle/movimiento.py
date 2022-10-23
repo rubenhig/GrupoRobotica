@@ -125,6 +125,22 @@ def main(args=None):
                 posicion.angular = vector
                 nodo_movimiento.publisher_Pose.publish(posicion)
 
+            
+            if(type(key) == KeyCode and key.char == ('p')):
+                nodo_movimiento.get_logger().info("dentro del if")
+
+                
+                posicion.linear.x = 2.0
+                posicion.linear.y = 0.0
+                posicion.linear.z = 0.0
+                posicion.angular.x = 0.0
+                posicion.angular.y = 0.0
+                posicion.angular.z = 1.0
+                nodo_movimiento.publisher_Pose.publish(posicion)
+
+                
+            
+
 
 
         def on_release(key):
@@ -142,9 +158,9 @@ def main(args=None):
             nodo_movimiento.publisher_Pose.publish(posicion)
 
 
-            if(type(key) == Key and key == keyboard.Key.alt):
-                nodo_movimiento.get_logger().info("dentro if alt")
-                nodo_movimiento.hacer_cuadrado(3.0)
+            #if(type(key) == Key and key == keyboard.Key.alt):
+             #   nodo_movimiento.get_logger().info("dentro if alt")
+              #  nodo_movimiento.hacer_cuadrado(3.0) 
 
             if(type(key) == KeyCode and key.char == ('1')):
                 nodo_movimiento.get_logger().info("dentro if 1")
@@ -185,6 +201,8 @@ def main(args=None):
             if(type(key) == KeyCode and key.char == ('k')):
                 nodo_movimiento.get_logger().info("dentro if k")
                 nodo_movimiento.mover_absoluto()
+                
+
 
             #parar movimientos
 

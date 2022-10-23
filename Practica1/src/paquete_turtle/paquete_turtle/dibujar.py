@@ -99,6 +99,38 @@ class ClienteDibujar(Node):
                 self.get_logger().info(f'valor de fondo_dinamico: {self.color_dinamico}')
                 self.cambiar_color_rand()
             sleep(0.1)
+
+    def cambiar_thicc_mas(self):
+
+        self.request.r = self.r
+        self.request.g = self.g
+        self.request.b = self.b
+        if self.width == 5:
+            self.request.width = self.width
+        else:
+            self.request.width = self.width + 1
+        
+
+        self.futuro = self.cliente.call_async(self.request)
+        rclpy.spin_until_future_complete(self, self.futuro)
+        sleep(0.1)
+        return self.futuro.result()
+
+
+    def cambiar_thicc_menos(self):
+
+        self.request.r = self.r
+        self.request.g = self.g
+        self.request.b = self.b
+        if self.width == 0:
+            self.request.width = self.width
+        else:
+            self.request.width = self.width - 1
+
+        self.futuro = self.cliente.call_async(self.request)
+        rclpy.spin_until_future_complete(self, self.futuro)
+        sleep(0.1)
+        return self.futuro.result()
         
 
 
@@ -121,6 +153,15 @@ def main(args=None):
             if(type(key) == Key and key == keyboard.Key.space):
                 nodo_dibujar.get_logger().info("dentro if space")
                 nodo_dibujar.peticion_set()
+            
+            if(type(key) == Key and key == keyboard.Key.up):
+                nodo_dibujar.get_logger().info("dentro if flecha arriba")
+                nodo_dibujar.cambiar_thicc_mas()
+
+            if(type(key) == Key and key == keyboard.Key.down):
+                nodo_dibujar.get_logger().info("dentro if flecha abajo")
+                nodo_dibujar.cambiar_thicc_menos()
+
 
 
 
