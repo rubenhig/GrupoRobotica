@@ -2,4 +2,5 @@
 dibujar = paquete_turtle.dibujar:main
 fondo = paquete_turtle.fondo:main
 movimiento = paquete_turtle.movimiento:main
+raton = paquete_turtle.raton:main
 
