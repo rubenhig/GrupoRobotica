@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import keyboard
+from matplotlib.transforms import blended_transform_factory
 from numpy import uint8
 import rclpy
 from rclpy.node import Node
@@ -67,48 +68,47 @@ class ClienteDibujar(Node):
         self.request = SetPen.Request()
         
     
-    def peticion_set(self):
+    def cambiar_param_dibujar(self, red = None, green = None, blue = None, pen = None, width = None):
+        self.r = red if red != None else self.r
+        self.g = green if green != None else self.g
+        self.b = blue if blue != None else self.b
+        self.estadoPen = pen if pen != None else self.estadoPen
+        self.width = width if width != None else self.width
+
 
         self.request.r = self.r
         self.request.g = self.g
         self.request.b = self.b
         self.request.width = self.width
-        
-         
+        self.request.off = self.estadoPen
+
+        self.futuro = self.cliente.call_async(self.request)
+        rclpy.spin_until_future_complete(self, self.futuro)
+        return self.futuro.result()
+
+
+    def peticion_set(self):
         self.get_logger().info(f"peticion lanzado  {self.estadoPen}")
         if(self.estadoPen == 0):
-            self.estadoPen = 1
-            self.request.off = 1
+            self.cambiar_param_dibujar(pen=1)
             
             self.get_logger().info("Primera rama if")
         elif(self.estadoPen == 1):
-            self.estadoPen = 0
-            self.request.off = 0
+            self.cambiar_param_dibujar(pen=0)
             
         else:
              self.get_logger().info("Problemas estado")
              #self.request.off = 0
         
-        
-
-        # Llamada asíncrona
-        self.futuro = self.cliente.call_async(self.request)
-        rclpy.spin_until_future_complete(self, self.futuro)
-        return self.futuro.result()
+    
 
     def cambiar_color_rand(self):
         
-        self.r = random.randint(0, 255)
-        self.g = random.randint(0, 255)
-        self.b = random.randint(0, 255)
-        self.request.r = self.r
-        self.request.g = self.g
-        self.request.b = self.b
-        self.request.width = self.width
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
 
-        self.futuro = self.cliente.call_async(self.request)
-        rclpy.spin_until_future_complete(self, self.futuro)
-        return self.futuro.result()
+        self.cambiar_param_dibujar(red=r, green=g, blue=b)
 
 
     def set_color_dinamico( self):
@@ -125,37 +125,17 @@ class ClienteDibujar(Node):
 
     def cambiar_thicc_mas(self):
 
-        self.request.r = self.r
-        self.request.g = self.g
-        self.request.b = self.b
-        if self.width == 10:
-            self.request.width = self.width
-        else:
-            self.width = self.width +1
-            self.request.width = self.width
+        if self.width < 10:
+            self.cambiar_param_dibujar(width= self.width +1)
         
 
-        self.futuro = self.cliente.call_async(self.request)
-        rclpy.spin_until_future_complete(self, self.futuro)
-        sleep(0.1)
-        return self.futuro.result()
 
 
     def cambiar_thicc_menos(self):
 
-        self.request.r = self.r
-        self.request.g = self.g
-        self.request.b = self.b
-        if self.width == 0:
-            self.request.width = self.width
-        else:
-            self.width = self.width -1
-            self.request.width = self.width
+        if self.width > 0:
+            self.cambiar_param_dibujar(width= self.width -1)
 
-        self.futuro = self.cliente.call_async(self.request)
-        rclpy.spin_until_future_complete(self, self.futuro)
-        sleep(0.1)
-        return self.futuro.result()
         
 
 
