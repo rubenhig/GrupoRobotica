@@ -53,7 +53,7 @@ class NodoRaton(Node):
     def mover_absoluto_periodico(self):
 
         while True:
-            if(self.pintar_raton):
+            if(self.pintar_raton and (self.x != 0.0) and (self.y != 0.0)):
                 self.get_logger().info(f'Llamada a mover_absoluto: {self.x}, {self.y}')
                 self.mover_absoluto(self.x, self.y, 0.0)
             sleep(0.1)
@@ -76,7 +76,6 @@ def main(args=None):
         nodo_raton = NodoRaton() 
 
         ancho, alto = pyautogui.size()
-        relacion_aspecto = ancho / alto                     #sobra---------------------------
 
         x_turtle = 0.0
         y_turtle = 0.0
@@ -106,39 +105,10 @@ def main(args=None):
             nodo_raton.get_logger().info(f"Posicion del raton : ({x},{y})")
             
 
-        def on_scroll(x, y, dx, dy):
-            pass
-
-        
-        
-        def on_press(key):
-            pass
-
-        nodo_raton.get_logger().info("dentro if shift l")
-
-        def on_release(key):
-            nonlocal pintar_raton
-
-
-            if(type(key) == KeyCode and key.char == ('p')):
-                nodo_raton.get_logger().info("dentro if shift l")
-                pintar_raton = not pintar_raton
-                nodo_raton.set_pintar(pintar_raton)
-                nodo_raton.get_logger().info("dentro if shift l")
-                
-
-    
-
         with mouse.Listener(
                 on_move = on_move,
-                on_click=on_click,
-                on_scroll=on_scroll) as listener_raton:
+                on_click=on_click) as listener_raton:
             listener_raton.join()
-
-        with keyboard.Listener(
-                on_press=on_press,
-                on_release=on_release) as listener_teclado:
-            listener_teclado.join()
 
             
         rclpy.spin(nodo_raton)

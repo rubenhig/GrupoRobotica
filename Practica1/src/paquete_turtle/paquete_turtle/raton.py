@@ -53,7 +53,7 @@ class NodoRaton(Node):
     def mover_absoluto_periodico(self):
 
         while True:
-            if(self.pintar_raton):
+            if(self.pintar_raton and (self.x != 0.0) and (self.y != 0.0)):
                 self.get_logger().info(f'Llamada a mover_absoluto: {self.x}, {self.y}')
                 self.mover_absoluto(self.x, self.y, 0.0)
             sleep(0.1)
