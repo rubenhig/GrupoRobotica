@@ -11,7 +11,27 @@ from turtlesim.srv import SetPen
 from time import sleep
 from threading import Thread
 import random
+from std_srvs.srv import Empty
 
+class ClienteClear(Node):
+
+    def __init__(self):
+        super().__init__('ClienteClear')
+        self.cliente = self.create_client(Empty, 'clear')
+        # Esperamos a que el servicio esté disponible
+        while not self.cliente.wait_for_service(timeout_sec=1.0):
+            if not rclpy.ok():
+                self.get_logger().error('Interruped while waiting for the server.')
+                return
+            else:
+                self.get_logger().info('Server not available, waiting again...')
+        self.request = Empty.Request()
+    
+    def peticion_c(self):
+
+        self.futuro = self.cliente.call_async(self.request)
+        rclpy.spin_until_future_complete(self, self.futuro)
+        return self.futuro.result()
 
 
 class ClienteDibujar(Node):
@@ -139,6 +159,7 @@ def main(args=None):
     try:
         rclpy.init(args=args)
         nodo_dibujar = ClienteDibujar()
+        nodo_clear = ClienteClear()
  
         def on_press(key):
             pass
@@ -146,8 +167,8 @@ def main(args=None):
 
 
         def on_release(key):
-            if(type(key) == KeyCode and key.char == ('c')):
-                nodo_dibujar.get_logger().info("dentro if tecla: C")
+            if(type(key) == KeyCode and key.char == ('v')):
+                nodo_dibujar.get_logger().info("dentro if tecla: v")
                 nodo_dibujar.set_color_dinamico()
 
             if(type(key) == Key and key == keyboard.Key.space):
@@ -163,7 +184,9 @@ def main(args=None):
                 nodo_dibujar.cambiar_thicc_menos()
 
 
-
+            if(type(key) == KeyCode and key.char == ('c')):
+                nodo_clear.get_logger().info("dentro if tecla: C")
+                nodo_clear.peticion_c()
 
 
 
@@ -174,6 +197,7 @@ def main(args=None):
 
             
         rclpy.spin(nodo_dibujar)
+        rclpy.spin(nodo_clear)
     finally:
         rclpy.shutdown()
 

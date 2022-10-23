@@ -13,6 +13,7 @@ paquete_turtle/dibujar.py
 paquete_turtle/fondo.py
 paquete_turtle/movimiento.py
 paquete_turtle/prueba.py
+paquete_turtle/raton.py
 resource/paquete_turtle
 test/test_copyright.py
 test/test_flake8.py

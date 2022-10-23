@@ -1,0 +1,28 @@
+running egg_info
+writing ../../build/paquete_turtle/paquete_turtle.egg-info/PKG-INFO
+writing dependency_links to ../../build/paquete_turtle/paquete_turtle.egg-info/dependency_links.txt
+writing entry points to ../../build/paquete_turtle/paquete_turtle.egg-info/entry_points.txt
+writing requirements to ../../build/paquete_turtle/paquete_turtle.egg-info/requires.txt
+writing top-level names to ../../build/paquete_turtle/paquete_turtle.egg-info/top_level.txt
+reading manifest file '../../build/paquete_turtle/paquete_turtle.egg-info/SOURCES.txt'
+writing manifest file '../../build/paquete_turtle/paquete_turtle.egg-info/SOURCES.txt'
+running build
+running build_py
+copying paquete_turtle/raton.py -> /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle
+copying paquete_turtle/dibujar.py -> /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle
+running install
+running install_lib
+copying /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle/raton.py -> /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle
+copying /home/mario/GrupoRobotica/Practica1/build/paquete_turtle/build/lib/paquete_turtle/dibujar.py -> /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle
+byte-compiling /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/raton.py to raton.cpython-310.pyc
+byte-compiling /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle/dibujar.py to dibujar.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/paquete_turtle/paquete_turtle.egg-info to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/python3.10/site-packages/paquete_turtle-0.0.0-py3.10.egg-info
+running install_scripts
+Installing dibujar script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+Installing fondo script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+Installing movimiento script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+Installing raton script to /home/mario/GrupoRobotica/Practica1/install/paquete_turtle/lib/paquete_turtle
+writing list of installed files to '/home/mario/GrupoRobotica/Practica1/build/paquete_turtle/install.log'
