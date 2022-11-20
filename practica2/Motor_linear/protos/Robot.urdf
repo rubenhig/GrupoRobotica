@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<robot name="C:/Users/ftmar/robotica/Webots/Practica2/protos/Robot.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+  </link>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="track">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_track_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="track"/>
+    <origin xyz="0 0 0.064" rpy="0 0 0"/>
+  </joint>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="track">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_track_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="track"/>
+    <origin xyz="0 0 0.064" rpy="0 0 0"/>
+  </joint>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="track">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_track_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="track"/>
+    <origin xyz="0 0 0.064" rpy="0 0 0"/>
+  </joint>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.12"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="track">
+    <visual>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1 0.2 0.004"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_link_track_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="track"/>
+    <origin xyz="0 0 0.064" rpy="0 0 0"/>
+  </joint>
+  <link name="box 3(1)">
+  </link>
+  <joint name="base_link_box 3(1)_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="box 3(1)"/>
+    <origin xyz="-0.46 0.04 0.275" rpy="0 0 -1.570795"/>
+  </joint>
+  <link name="box 2(1)">
+  </link>
+  <joint name="base_link_box 2(1)_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="box 2(1)"/>
+    <origin xyz="-0.44 -0.06 0.285" rpy="0 0 -1.570795"/>
+  </joint>
+  <link name="box 1(1)">
+  </link>
+  <joint name="base_link_box 1(1)_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="box 1(1)"/>
+    <origin xyz="-0.44 -0.16 0.255" rpy="0 0 -1.570795"/>
+  </joint>
+</robot>

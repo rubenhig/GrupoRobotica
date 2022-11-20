@@ -1,0 +1,441 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.31799558055746724 -0.36202880257256076 0.876249939716858 4.7099713620223564
+  position -0.13018506688521375 1.1321537694330526 1.3492383689911116
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 2.93 0
+}
+RectangleArena {
+  name "rectangle arena(1)"
+  floorSize 4 4
+  wallHeight 0.4
+}
+Robot {
+  translation 0.13 -0.21 0.3
+  rotation 0 1 0 0
+  children [
+    SliderJoint {
+      jointParameters JointParameters {
+        position -0.07100000000000005
+      }
+      device [
+        LinearMotor {
+          name "linear motor2"
+          minPosition -0.08
+          maxPosition 0.066
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.03899999999999991
+        children [
+          Shape {
+            geometry Box {
+              size 0.175 0.01 0.01
+            }
+          }
+          SliderJoint {
+            jointParameters JointParameters {
+              position 0.0009999999999999792
+              axis -1 0 0
+            }
+            device [
+              LinearMotor {
+                name "linear motor3"
+                maxPosition 0.13
+              }
+            ]
+            endPoint Solid {
+              translation 0.07096000000000105 0 -0.01
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0 0
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.003
+                  }
+                }
+              ]
+              name "solid(1)"
+            }
+          }
+        ]
+        name "solid(4)"
+      }
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+        position 0.017000000000000008
+        axis 0 -1 0
+      }
+      device [
+        LinearMotor {
+          minPosition -0.055
+          maxPosition 0.06
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.010000000000000002 0.02
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.5 0.5 0.5
+              metalness 0
+            }
+            geometry Box {
+              size 0.15 0.15 0.002
+            }
+          }
+        ]
+      }
+    }
+    DEF BASE_GROUP Transform {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.2 0.2 0.2
+            metalness 0
+          }
+          geometry Box {
+            size 0.2 0.2 0.02
+          }
+        }
+        Transform {
+          translation -0.095 0 0.11
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.2 0.2 0.2
+                metalness 0
+              }
+              geometry Box {
+                size 0.01 0.01 0.2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0.095 0 0.11
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.2 0.2 0.2
+                metalness 0
+              }
+              geometry Box {
+                size 0.01 0.01 0.2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0.002 0.015
+          rotation 1 0 0 -1.5707953071795862
+          children [
+            Shape {
+              geometry Box {
+                size 0.01 0.01 0.2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 6.95583e-09 0.00070001 0.205
+          rotation 0.577349935856137 0.5773509358560258 -0.577349935856137 -2.094395307179586
+          children [
+            Shape {
+              appearance DEF color_base PBRAppearance {
+                baseColor 0.2 0.2 0.2
+                metalness 0
+              }
+              geometry Box {
+                size 0.01 0.01 0.2
+              }
+            }
+          ]
+        }
+      ]
+    }
+    Shape {
+    }
+  ]
+  controller "controlador_3D"
+}
+DEF ROBOT_BELT Robot {
+  translation 0.2 -0.68 0.18
+  rotation 0 0.019992003597921214 0.9998001399240455 3.141592653589793
+  children [
+    Shape {
+      appearance USE color_base
+      geometry Box {
+        size 1 0.2 0.2
+      }
+    }
+    Track {
+      translation -7.565801448949916e-07 -6.683868750889665e-05 0.1017240505161941
+      rotation 0.17633837484016956 0.98293585378365 0.05236301085054916 2.5968305145949913e-07
+      children [
+        DEF BELT Shape {
+          appearance DEF textura_belt PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/checkered_marble.jpg"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              scale 20 1
+              translation -0.45482499999917886 0
+            }
+          }
+          geometry Box {
+            size 1 0.2 0.005
+          }
+        }
+      ]
+      boundingObject USE BELT
+      physics Physics {
+        density -1
+        mass 10
+      }
+      locked TRUE
+      device [
+        LinearMotor {
+        }
+      ]
+      textureAnimation 1.85 0
+      linearVelocity -3.469446951953614e-16 -1.3877787807814457e-15 6.364233787936676e-16
+      angularVelocity 8.673617379881798e-17 6.649324168448425e-22 3.6946748055474895e-23
+    }
+  ]
+  name "robot(1)"
+  boundingObject DEF belt_bo Transform {
+    translation 0 0 0.0998
+    rotation 0 1 0 0
+    children [
+      USE BELT
+    ]
+  }
+  controller "controlador_belt"
+}
+DEF ROBOT_BELT Robot {
+  translation -0.401377 -0.278636 0.172913
+  rotation 0.02827300674977121 1.355660323644284e-10 0.9996002386400913 1.5712
+  children [
+    Shape {
+      appearance USE color_base
+      geometry Box {
+        size 1 0.2 0.2
+      }
+    }
+    Track {
+      translation -2.7010099969138057e-05 -2.6463008648280884e-05 0.10198757797854377
+      rotation 0.06165838093744563 -0.26884229424294287 -0.9612086479460971 7.405827773219692e-08
+      children [
+        DEF BELT Shape {
+          appearance DEF textura_belt PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/checkered_marble.jpg"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              scale 20 1
+              translation -0.45482499999917886 0
+            }
+          }
+          geometry Box {
+            size 1 0.2 0.005
+          }
+        }
+      ]
+      boundingObject USE BELT
+      physics Physics {
+        density -1
+        mass 10
+      }
+      locked TRUE
+      device [
+        LinearMotor {
+        }
+      ]
+      textureAnimation 1.85 0
+      linearVelocity -3.1978670825923485e-13 1.0763748770752543e-13 4.240882884135975e-12
+      angularVelocity 2.028798141937592e-12 -2.249037739031094e-13 1.680615063018805e-13
+    }
+  ]
+  name "robot(2)"
+  boundingObject USE belt_bo
+  controller "controlador_belt"
+}
+DEF ROBOT_BELT Robot {
+  translation 0 0.32 0.18
+  rotation 0 -0.9999999831717299 0.00018345718835060902 0.03998667181736864
+  children [
+    Shape {
+      appearance USE color_base
+      geometry Box {
+        size 1 0.2 0.2
+      }
+    }
+    Track {
+      translation -5.8926451867757565e-05 3.7829347826479065e-07 0.1020992938557547
+      rotation 0.42020323793828185 0.9067133482580246 -0.0360574946010654 7.855148234362842e-06
+      children [
+        DEF BELT Shape {
+          appearance DEF textura_belt PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/checkered_marble.jpg"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              scale 20 1
+              translation -0.45482499999917886 0
+            }
+          }
+          geometry Box {
+            size 1 0.2 0.005
+          }
+        }
+      ]
+      boundingObject USE BELT
+      physics Physics {
+        density -1
+        mass 10
+      }
+      locked TRUE
+      device [
+        LinearMotor {
+        }
+      ]
+      textureAnimation 1.85 0
+      linearVelocity 1.0648177427361973e-11 1.2451326011254423e-12 -1.2680766630429693e-11
+      angularVelocity -6.410696876673897e-11 9.262928269428948e-06 1.5238350609703625e-11
+    }
+  ]
+  name "robot(3)"
+  boundingObject USE belt_bo
+  controller "controlador_belt"
+}
+DEF ROBOT_BELT Robot {
+  translation 0.598619 -0.0786556 0.187106
+  rotation 0 -0.028267469872805543 -0.9996003952315096 1.5711849918015535
+  children [
+    Shape {
+      appearance USE color_base
+      geometry Box {
+        size 1 0.2 0.2
+      }
+    }
+    Track {
+      translation -4.066298572337479e-05 -3.9290357217836025e-05 0.1019867564204584
+      rotation -0.0016985771984923037 0.7979145754291014 -0.6027681520728326 4.359152060520088e-07
+      children [
+        DEF BELT Shape {
+          appearance DEF Textura_belt PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/default/worlds/textures/checkered_marble.jpg"
+              ]
+            }
+            roughness 1
+            metalness 0
+            textureTransform TextureTransform {
+              scale 20 1
+              translation -0.7098249999991811 0
+            }
+          }
+          geometry Box {
+            size 1 0.2 0.005
+          }
+        }
+      ]
+      boundingObject USE BELT
+      physics Physics {
+        density -1
+        mass 10
+      }
+      locked TRUE
+      device [
+        LinearMotor {
+        }
+      ]
+      textureAnimation 1.85 0
+      linearVelocity -1.3877787807814457e-15 -1.734723475976807e-16 6.368786211111536e-16
+      angularVelocity -1.9138464378862264e-17 -7.848774397558632e-17 -2.775790816700015e-15
+    }
+  ]
+  name "robot(4)"
+  boundingObject USE belt_bo
+  controller "controlador_belt"
+}
+Solid {
+  translation 0.1906176097649737 0.2467338400896807 0.306260016441925
+  rotation -0.9115014650809267 -0.2704170040831636 -0.3099027638760428 -1.6497769550457964
+  scale 0.3 0.3 0.3
+  children [
+    DEF BOX Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE BOX
+  physics Physics {
+    density 100000
+  }
+  linearVelocity 0.2185727472227812 1.5412456053928603e-06 0.008741350561524464
+  angularVelocity 5.751538643365796e-08 9.853914547634499e-06 2.4090803056597623e-09
+}
+Solid {
+  translation 0.13 -0.21 0.15
+  children [
+    Shape {
+      appearance USE color_base
+      geometry Box {
+        size 0.25 0.25 0.29
+      }
+    }
+  ]
+}
+Robot {
+  children [
+    SliderJoint {
+      jointParameters JointParameters {
+      }
+      device [
+        LinearMotor {
+        }
+      ]
+      endPoint Solid {
+      }
+    }
+  ]
+  name "robot(5)"
+}
