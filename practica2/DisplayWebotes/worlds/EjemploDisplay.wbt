@@ -1,0 +1,69 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.4098316010059942 0.004774711651193376 0.912148705500102 3.120346515981579
+  position 1.8795203985643854 -0.007609955285889968 2.670644706035833
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+  floorAppearance NULL
+}
+Robot {
+  translation 0.06 0 -0.0500001
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Display {
+      translation 0 0 0.1
+      rotation 1 0 0 0
+      scale 14 14 14
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry IndexedFaceSet {
+            coord Coordinate {
+              point [
+                0.011 -0.04 0.04
+                0.011 -0.04 -0.04
+                0.011 0.04 -0.04
+                0.011 0.04 0.04
+              ]
+            }
+            texCoord TextureCoordinate {
+              point [
+                0 1
+                0 0
+                1 0
+                1 1
+              ]
+            }
+            coordIndex [
+              0, 1, 2, 3
+            ]
+            texCoordIndex [
+              0, 1, 2, 3
+            ]
+          }
+        }
+      ]
+      name "display_emoticonos"
+      width 14
+      height 14
+    }
+  ]
+  controller "Display_emoticonos"
+}
